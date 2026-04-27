@@ -1,15 +1,20 @@
 package model;
 
+import enums.StatusDenuncia;
+import enums.TipoDenuncia;
+
 import java.util.Date;
 
 public class Denuncia {
     private int id;
-    private Date data;
+    private Denunciante denunciante;
+    private Date dataCriacao;
+    private Date dataAtualizacao;
     private Localizacao localizacao;
-    private Anexo anexo;
-    private TipoDenuncia tipo;
     private String descricao;
-    private Status status;
+    private Anexo anexo;
+    private TipoDenuncia tipoDenuncia;
+    private StatusDenuncia status;
 
     public void registrarDenuncia() {
         System.out.println("Denúncia registrada!");

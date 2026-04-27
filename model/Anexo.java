@@ -1,13 +1,12 @@
 package model;
 
+import enums.TipoMidia;
+
+import java.util.Date;
+
 public class Anexo {
-    private String media;
+    private int id;
+    private TipoMidia tipoMidia;
+    private Date dataEnvio;
 
-    public Anexo(String media) {
-        this.media = media;
-    }
-
-    public String toString() {
-        return media;
-    }
 }

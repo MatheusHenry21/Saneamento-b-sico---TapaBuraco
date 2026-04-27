@@ -1,9 +1,10 @@
 package model;
 
 public class Pessoa {
-    protected String nome;
-    protected int id;
-    protected String senha;
+    private int id;
+    private String nome;
+    private String email;
+    private String senha;
 
     public void logar() {
         System.out.println("Usuário logado");
