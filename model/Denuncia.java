@@ -16,11 +16,4 @@ public class Denuncia {
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia status;
 
-    public void registrarDenuncia() {
-        System.out.println("Denúncia registrada!");
-    }
-
-    public String toString() {
-        return "Denuncia{id=" + id + ", descricao='" + descricao + "', status=" + status + "}";
-    }
 }
