@@ -16,4 +16,15 @@ public class Denuncia {
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia status;
 
+    public void registrar(String dados){
+        return;
+    }
+
+    public void atualizarInformacoes(String dados){
+        return;
+    }
+
+    public void alterarStatus(StatusDenuncia statusDenuncia){
+        return;
+    }
 }
