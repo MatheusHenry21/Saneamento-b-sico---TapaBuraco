@@ -1,12 +1,16 @@
 package views;
 
+import manage.Autenticar;
 import model.*;
 import utils.ScannerUtil;
 
 public class Main {
     public static void main(String[] args) {
 
-        ScannerUtil entradas = new ScannerUtil();
+        ScannerUtil sc = new ScannerUtil();
+
+        Autenticar autenticar = new Autenticar();
+
         int opcao;
 
         do {
@@ -16,7 +20,14 @@ public class Main {
             System.out.println("2 - Realizar cadastro");
             System.out.println("3 - Sair");
 
-            opcao = entradas.opcao();
+            opcao = sc.opcao();
+
+            switch (opcao){
+                case 1:
+                    autenticar.login();
+                case 2:
+                    autenticar.cadastrarPessoa();
+            }
 
         }while(opcao != 3);
 

@@ -28,4 +28,16 @@ public class ScannerUtil {
         String senha = sc.nextLine();
         return senha;
     }
+
+    public String celular(){
+        System.out.print("Digite seu celular(ex: 1199999999): ");
+        String celular = sc.nextLine();
+        return celular;
+    }
+
+    public String cpf(){
+        System.out.print("Digite o cpf (ex: 12345678910): ");
+        String cpf = sc.nextLine();
+        return cpf;
+    }
 }

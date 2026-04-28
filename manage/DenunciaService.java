@@ -1,4 +1,4 @@
-package manege;
+package manage;
 
 import enums.StatusDenuncia;
 import model.Denuncia;
