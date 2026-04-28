@@ -4,7 +4,9 @@ public class Denunciante extends Pessoa {
     private String celular;
     private String cpf;
 
-    public void enviarDenuncia(Denuncia denuncia) {
-        System.out.println("Denúncia enviada: " + denuncia);
+    public Denunciante(String nome, String email, String senha, String celular, String cpf){
+        super(nome, email, senha);
+        this.celular = celular;
+        this.cpf = cpf;
     }
 }

@@ -14,7 +14,16 @@ public class Denuncia {
     private String descricao;
     private Anexo anexo;
     private TipoDenuncia tipoDenuncia;
-    private StatusDenuncia status;
+    private StatusDenuncia statusDenuncia;
+
+    public Denuncia(Date dataCriacao, Localizacao localizacao, String descricao, Anexo anexo, TipoDenuncia tipoDenuncia, StatusDenuncia statusDenuncia){
+        this.dataCriacao = dataCriacao;
+        this.localizacao = localizacao;
+        this.descricao = descricao;
+        this.anexo = anexo;
+        this.tipoDenuncia = tipoDenuncia;
+        this.statusDenuncia = statusDenuncia;
+    }
 
     public void registrar(String dados){
         return;
