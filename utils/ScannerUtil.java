@@ -30,6 +30,12 @@ public class ScannerUtil {
         return senha;
     }
 
+    public String novaSenha(){
+        System.out.print("\nDigite a nova senha: ");
+        String senha = sc.nextLine();
+        return senha;
+    }
+
     public String celular(){
         System.out.print("Digite seu celular(ex: 1199999999): ");
         String celular = sc.nextLine();
