@@ -14,19 +14,19 @@ public abstract class Pessoa {
         this.acesso = false;
     }
 
-    public String getEmail() {
-        return email;
+    public void setAcesso() {
+        this.acesso = !acesso;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAcesso() {
-        this.acesso = !acesso;
+    public String getSenha() {
+        return senha;
     }
 }
