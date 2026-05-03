@@ -5,11 +5,13 @@ public abstract class Pessoa {
     private String nome;
     private String email;
     private String senha;
+    private Boolean acesso;
 
     public Pessoa(String nome, String email, String senha){
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.acesso = false;
     }
 
     public String getEmail() {
@@ -22,5 +24,9 @@ public abstract class Pessoa {
 
     public String getSenha() {
         return senha;
+    }
+
+    public void setAcesso() {
+        this.acesso = !acesso;
     }
 }

@@ -8,15 +8,15 @@ import java.util.Date;
 public class Denuncia {
     private int id;
     private Denunciante denunciante;
-    private Date dataCriacao;
-    private Date dataAtualizacao;
+    private String dataCriacao;
+    private String dataAtualizacao;
     private Localizacao localizacao;
     private String descricao;
     private Anexo anexo;
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia statusDenuncia;
 
-    public Denuncia(Date dataCriacao, Localizacao localizacao, String descricao, Anexo anexo, TipoDenuncia tipoDenuncia, StatusDenuncia statusDenuncia){
+    public Denuncia(String dataCriacao, Localizacao localizacao, String descricao, Anexo anexo, TipoDenuncia tipoDenuncia, StatusDenuncia statusDenuncia){
         this.dataCriacao = dataCriacao;
         this.localizacao = localizacao;
         this.descricao = descricao;
