@@ -3,14 +3,19 @@ package DAO;
 import model.Denunciante;
 import model.Pessoa;
 import utils.ScannerUtil;
+import views.MainDenunciante;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class PessoaDAO {
-    ArrayList<Pessoa> usuarios;
-    Pessoa novoUsuario;
-    ScannerUtil sc;
+    private ArrayList<Pessoa> usuarios;
+    private Pessoa novoUsuario;
+    private ScannerUtil sc;
+
+    public PessoaDAO(){
+        usuarios = new ArrayList<>();
+        sc = new ScannerUtil();
+    }
 
     public void cadastrar(String nome, String email, String senha, String celular, String cpf){
         this.novoUsuario = new Denunciante(nome, email, senha, celular, cpf);
@@ -19,10 +24,9 @@ public class PessoaDAO {
 
     public Pessoa buscarPorEmail(String email){
         for(Pessoa p: usuarios){
-            if(!p.getEmail().equals(email)){
-               return null;
+            if(p.getEmail().equals(email)){
+               return p;
             }
-            return p;
         }
         return null;
     }
@@ -37,16 +41,16 @@ public class PessoaDAO {
         p.setSenha(novaSenha);
     }
 
-    public Pessoa realizarLogin(String email, String senha){
+    public void realizarLogin(String email, String senha){
+        MainDenunciante mainDenunciante = new MainDenunciante();
         Pessoa p = buscarPorEmail(email);
         if (p == null){
-            return null;
+            return;
         }
 
         if (!p.getSenha().equals(senha)){
-            return null;
+            return;
         }
-
-        return p;
+        mainDenunciante.main(p);
     }
 }

@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         ScannerUtil sc = new ScannerUtil();
-        PessoaDAO daoPessoa = new PessoaDAO();
+        PessoaDAO managerPessoa = new PessoaDAO();
 
         int opcao;
         String nome;
@@ -20,7 +20,7 @@ public class Main {
         Administrador adm = new Administrador("ADM", "admin123@gmail.com", "admin123");
 
         do {
-            System.out.println("Bem-vindo ao Tapa Buraco\n");
+            System.out.println("\n  ---MENU PRINCIPAL---");
             System.out.println("1 - Efetuar login");
             System.out.println("2 - Realizar cadastro");
             System.out.println("3 - Esqueci a senha");
@@ -33,7 +33,8 @@ public class Main {
                     email = sc.email();
                     senha = sc.senha();
 
-                    daoPessoa.realizarLogin(email, senha);
+                    managerPessoa.realizarLogin(email, senha);
+                    break;
                 case 2:
                     nome = sc.nome();
                     email = sc.email();
@@ -41,14 +42,20 @@ public class Main {
                     celular = sc.celular();
                     cpf = sc.cpf();
 
-                    daoPessoa.cadastrar(nome, email, senha, celular, cpf);
+                    managerPessoa.cadastrar(nome, email, senha, celular, cpf);
+                    break;
                 case 3:
                     email = sc.email();
 
-                    daoPessoa.atualizarSenha(email);
+                    managerPessoa.atualizarSenha(email);
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("\nOpção indisponivel, tente novamente.");
             }
 
-        }while(opcao != 3);
+        }while(opcao != 4);
         System.out.println("\nSaindo... até logo!");
 
     }

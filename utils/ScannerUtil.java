@@ -8,6 +8,7 @@ public class ScannerUtil {
     public int opcao(){
         System.out.print("Digite a opção: ");
         int opcao = sc.nextInt();
+        sc.nextLine();
         return opcao;
     }
 
@@ -39,5 +40,11 @@ public class ScannerUtil {
         System.out.print("Digite o cpf (ex: 12345678910): ");
         String cpf = sc.nextLine();
         return cpf;
+    }
+
+    public String descricao(){
+        System.out.print("Descreva o problema: ");
+        String descricao = sc.nextLine();
+        return descricao;
     }
 }
