@@ -2,6 +2,7 @@ package views;
 
 import DAO.PessoaDAO;
 import model.*;
+import utils.Feedbacks;
 import utils.ScannerUtil;
 
 public class Main {
@@ -9,6 +10,7 @@ public class Main {
 
         ScannerUtil sc = new ScannerUtil();
         PessoaDAO managerPessoa = new PessoaDAO();
+        Feedbacks feedbacks = new Feedbacks();
 
         int opcao;
         String nome;
@@ -17,16 +19,15 @@ public class Main {
         String celular;
         String cpf;
 
-        Administrador adm = new Administrador("ADM", "admin123@gmail.com", "admin123");
-
         do {
             System.out.println("\n  ---MENU PRINCIPAL---");
             System.out.println("1 - Efetuar login");
             System.out.println("2 - Realizar cadastro");
             System.out.println("3 - Esqueci a senha");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Sair\n");
 
             opcao = sc.opcao();
+            System.out.println("");
 
             switch (opcao){
                 case 1:
@@ -50,13 +51,13 @@ public class Main {
                     managerPessoa.atualizarSenha(email);
                     break;
                 case 4:
+                    System.out.println("\nSaindo... até logo!");
                     break;
                 default:
-                    System.out.println("\nOpção indisponivel, tente novamente.");
+                    feedbacks.opcaoInvalida();
             }
 
         }while(opcao != 4);
-        System.out.println("\nSaindo... até logo!");
 
     }
 }
