@@ -5,9 +5,7 @@ import utils.Feedbacks;
 public enum TipoMidia {
     IMAGEM(1),
     VIDEO(2),
-    AUDIO(3),
-    DOCUMENTO(4),
-    OUTROS(5);
+    DOCUMENTO(3);
 
     private final int codigo;
 

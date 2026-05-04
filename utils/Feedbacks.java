@@ -11,6 +11,10 @@ public class Feedbacks {
         System.out.println("\nCadastro realizado com sucesso.");
     }
 
+    public static void cadastroSucessoDenuncia(){
+        System.out.print("\nDenúncia cadastra com sucesso.");
+    }
+
     public static void alteracaoSucesso(){
         System.out.println("\nAlteração realizada com sucesso.");
     }

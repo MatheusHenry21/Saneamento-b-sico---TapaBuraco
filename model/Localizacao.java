@@ -1,7 +1,6 @@
 package model;
 
 public class Localizacao {
-    private Pessoa denuciante;
     private String bairro;
     private String rua;
     private String numero;
