@@ -18,4 +18,8 @@ public class Anexo {
         dataEnvio = DateTimeUtil.formatarData(DateTimeUtil.DATE_TIME_FORMAT);
         this.tipoMidias = new HashSet<>(tipoMidia);
     }
+
+    public void setTipoMidias(Set<TipoMidia> tipoMidias) {
+        this.tipoMidias = tipoMidias;
+    }
 }

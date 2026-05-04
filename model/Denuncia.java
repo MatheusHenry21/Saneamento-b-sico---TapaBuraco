@@ -33,6 +33,10 @@ public class Denuncia {
         return localizacao;
     }
 
+    public Anexo getAnexo() {
+        return anexo;
+    }
+
     public void setTipoDenuncia(TipoDenuncia tipoDenuncia) {
         this.tipoDenuncia = tipoDenuncia;
     }
