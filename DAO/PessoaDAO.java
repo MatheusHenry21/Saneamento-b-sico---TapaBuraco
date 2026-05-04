@@ -5,6 +5,7 @@ import model.Denunciante;
 import model.Pessoa;
 import utils.Feedbacks;
 import utils.ScannerUtil;
+import views.MainAdministrador;
 import views.MainDenunciante;
 
 import java.util.ArrayList;
@@ -54,6 +55,7 @@ public class PessoaDAO {
 
     public void realizarLogin(String email, String senha){
         MainDenunciante mainDenunciante = new MainDenunciante();
+        MainAdministrador mainAdministrador = new MainAdministrador();
         Pessoa p = buscarPorEmail(email);
         if (p == null){
             return;
@@ -63,6 +65,13 @@ public class PessoaDAO {
             feedbacks.senhaIncorreta();
             return;
         }
-        mainDenunciante.main(p);
+
+        if (p.getAcesso()){
+            mainAdministrador.main();
+        }
+
+        if(!p.getAcesso()){
+            mainDenunciante.main(p);
+        }
     }
 }
