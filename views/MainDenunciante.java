@@ -64,6 +64,7 @@ public class MainDenunciante {
                     Feedbacks.cadastroSucessoDenuncia();
                     break;
                 case 2:
+                    AlterarDenuncia.main();
                     break;
                 case 3:
                     break;

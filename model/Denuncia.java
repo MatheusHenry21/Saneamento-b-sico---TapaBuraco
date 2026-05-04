@@ -40,4 +40,8 @@ public class Denuncia {
     public void setTipoDenuncia(TipoDenuncia tipoDenuncia) {
         this.tipoDenuncia = tipoDenuncia;
     }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }

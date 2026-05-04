@@ -75,7 +75,16 @@ public class AlterarDenuncia {
                     Feedbacks.alteracaoSucesso();
                     break;
                 case 4:
-                    break;
+                    id = ScannerUtil.id();
+                    denuncia = DenunciaDAO.buscarPorId(id);
+                    if(denuncia == null){
+                        Feedbacks.idNaoEncontrado();
+                        continue;
+                    }
+
+                    String descricao = ScannerUtil.descricao();
+                    denuncia.setDescricao(descricao);
+                    Feedbacks.alteracaoSucesso();
                 case 5:
                     Feedbacks.voltando();
                     break;
