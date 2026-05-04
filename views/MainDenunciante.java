@@ -27,6 +27,7 @@ public class MainDenunciante {
     private String cep;
     private String referncia;
 
+    private MainTipoDenuncia mainTipoDenuncia;
     private LocalizacaoDAO localizacaoDAO = new LocalizacaoDAO();
 
     public void main(Pessoa usuario){
@@ -44,7 +45,7 @@ public class MainDenunciante {
                     dataAtual = DateTimeUtil.formatarData(DateTimeUtil.DATE_TIME_FORMAT);
                     statusDenuncia = StatusDenuncia.EM_ANALISE;
 
-                    tipoDenuncia = TipoDenuncia.OUTROS;
+                    tipoDenuncia = mainTipoDenuncia.main();
 
                     bairro = ScannerUtil.bairro();
                     rua = ScannerUtil.rua();
