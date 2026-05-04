@@ -13,23 +13,18 @@ import java.util.ArrayList;
 public class PessoaDAO {
     private ArrayList<Pessoa> usuarios;
     private Pessoa novoUsuario;
-    private ScannerUtil sc;
-    private Feedbacks feedbacks;
 
     public PessoaDAO(){
         usuarios = new ArrayList<>();
 
         Pessoa adm = new Administrador("ADM", "admin123@gmail.com", "admin123");
         usuarios.add(adm);
-
-        sc = new ScannerUtil();
-        feedbacks = new Feedbacks();
     }
 
     public void cadastrar(String nome, String email, String senha, String celular, String cpf){
         this.novoUsuario = new Denunciante(nome, email, senha, celular, cpf);
         usuarios.add(novoUsuario);
-        feedbacks.cadastroSucesso();
+        Feedbacks.cadastroSucesso();
     }
 
     public Pessoa buscarPorEmail(String email){
@@ -38,7 +33,7 @@ public class PessoaDAO {
                return p;
             }
         }
-        feedbacks.erroLocalizarEmail();
+        Feedbacks.erroLocalizarEmail();
         return null;
     }
 
@@ -48,9 +43,9 @@ public class PessoaDAO {
             return;
         }
 
-        String novaSenha = sc.novaSenha();
+        String novaSenha = ScannerUtil.novaSenha();
         p.setSenha(novaSenha);
-        feedbacks.alteracaoSucesso();
+        Feedbacks.alteracaoSucesso();
     }
 
     public void realizarLogin(String email, String senha){
@@ -62,7 +57,7 @@ public class PessoaDAO {
         }
 
         if (!p.getSenha().equals(senha)){
-            feedbacks.senhaIncorreta();
+            Feedbacks.senhaIncorreta();
             return;
         }
 

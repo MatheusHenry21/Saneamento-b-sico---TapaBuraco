@@ -5,6 +5,7 @@ import enums.StatusDenuncia;
 import enums.TipoDenuncia;
 import model.*;
 import utils.DateTimeUtil;
+import utils.Feedbacks;
 import utils.ScannerUtil;
 
 public class MainDenunciante {
@@ -13,36 +14,28 @@ public class MainDenunciante {
     private Denuncia novaDenuncia;
 
     private String dataAtual;
-    private DenunciaDAO managerPessoa;
+    private DenunciaDAO managerDenuncia;
     private Localizacao localizacao;
     private String descricao;
     private Anexo anexo;
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia statusDenuncia;
 
-    private ScannerUtil sc;
-    private DateTimeUtil dateTimeUtil;
-
-    public MainDenunciante(){
-        sc = new ScannerUtil();
-        dateTimeUtil = new DateTimeUtil();
-    }
-
     public void main(Pessoa usuario){
         do{
-            System.out.println("\n---MENU---");
+            System.out.println("\n  ---MENU DENUNCIANTE---");
             System.out.println("1 - Registrar denúncia");
             System.out.println("2 - Editar denúncia");
             System.out.println("3 - Ver denúncia próximas de você");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Sair\n");
 
-            opcao = sc.opcao();
+            opcao = ScannerUtil.opcao();
 
             switch (opcao){
                 case 1:
-                    dataAtual = dateTimeUtil.formatarData(DateTimeUtil.DATE_TIME_FORMAT);
+                    dataAtual = DateTimeUtil.formatarData(DateTimeUtil.DATE_TIME_FORMAT);
                     localizacao = new Localizacao("ex", "ex", "ex", "ex", "ex");
-                    descricao = sc.descricao();
+                    descricao = ScannerUtil.descricao();
                     anexo = new Anexo();
                     tipoDenuncia = TipoDenuncia.OUTROS;
                     statusDenuncia = StatusDenuncia.EM_ANALISE;
@@ -52,12 +45,14 @@ public class MainDenunciante {
                 case 2:
                     break;
                 case 3:
-
+                    break;
+                case 4:
+                    Feedbacks.saindoConta();
+                default:
+                    Feedbacks.opcaoInvalida();
             }
 
         }while (opcao != 4);
-        System.out.println("\nVoando...");
-        return;
 
     }
 }

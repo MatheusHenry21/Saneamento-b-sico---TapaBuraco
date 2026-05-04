@@ -6,24 +6,16 @@ import utils.ScannerUtil;
 public class MainAdministrador {
 
     private int opcao;
-    private ScannerUtil sc;
-    private Feedbacks feedbacks;
 
-
-    public MainAdministrador(){
-        sc = new ScannerUtil();
-        feedbacks = new Feedbacks();
-    }
-
-    public void mainAdministrador(){
+    public void main(){
         do {
-            System.out.println("---MENU ADM---");
+            System.out.println("\n---MENU ADM---");
             System.out.println("1 - ");
             System.out.println("2 - ");
             System.out.println("3 - ");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Sair\n");
 
-            opcao = sc.opcao();
+            opcao = ScannerUtil.opcao();
 
             switch (opcao){
                 case 1:
@@ -33,9 +25,11 @@ public class MainAdministrador {
                 case 3:
                     break;
                 case 4:
+                    Feedbacks.saindoConta();
                     break;
                 default:
-                    feedbacks.opcaoInvalida();
+                    Feedbacks.opcaoInvalida();
+                    break;
             }
 
         }while (opcao != 4);

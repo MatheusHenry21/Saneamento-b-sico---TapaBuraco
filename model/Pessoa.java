@@ -29,4 +29,8 @@ public abstract class Pessoa {
     public String getSenha() {
         return senha;
     }
+
+    public Boolean getAcesso() {
+        return acesso;
+    }
 }

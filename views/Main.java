@@ -7,10 +7,7 @@ import utils.ScannerUtil;
 
 public class Main {
     public static void main(String[] args) {
-
-        ScannerUtil sc = new ScannerUtil();
         PessoaDAO managerPessoa = new PessoaDAO();
-        Feedbacks feedbacks = new Feedbacks();
 
         int opcao;
         String nome;
@@ -26,27 +23,27 @@ public class Main {
             System.out.println("3 - Esqueci a senha");
             System.out.println("4 - Sair\n");
 
-            opcao = sc.opcao();
+            opcao = ScannerUtil.opcao();
             System.out.println("");
 
             switch (opcao){
                 case 1:
-                    email = sc.email();
-                    senha = sc.senha();
+                    email = ScannerUtil.email();
+                    senha = ScannerUtil.senha();
 
                     managerPessoa.realizarLogin(email, senha);
                     break;
                 case 2:
-                    nome = sc.nome();
-                    email = sc.email();
-                    senha = sc.senha();
-                    celular = sc.celular();
-                    cpf = sc.cpf();
+                    nome = ScannerUtil.nome();
+                    email = ScannerUtil.email();
+                    senha = ScannerUtil.senha();
+                    celular = ScannerUtil.celular();
+                    cpf = ScannerUtil.cpf();
 
                     managerPessoa.cadastrar(nome, email, senha, celular, cpf);
                     break;
                 case 3:
-                    email = sc.email();
+                    email = ScannerUtil.email();
 
                     managerPessoa.atualizarSenha(email);
                     break;
@@ -54,7 +51,7 @@ public class Main {
                     System.out.println("\nSaindo... até logo!");
                     break;
                 default:
-                    feedbacks.opcaoInvalida();
+                    Feedbacks.opcaoInvalida();
             }
 
         }while(opcao != 4);
