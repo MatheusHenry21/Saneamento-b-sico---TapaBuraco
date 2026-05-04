@@ -1,7 +1,8 @@
 package DAO;
 
 import model.Denuncia;
-import utils.Feedbacks;
+import model.Denunciante;
+import model.Localizacao;
 
 import java.util.ArrayList;
 
@@ -19,5 +20,19 @@ public class DenunciaDAO{
             }
         }
         return null;
+    }
+
+    public ArrayList<Denuncia> denunciasProximas(Denunciante denunciante){
+        ArrayList<Denuncia> denunciasProximas = new ArrayList<>();
+        String cepParametro = denunciante.getCep();
+
+        for(Denuncia d : denuncias){
+            Localizacao localizacao = d.getLocalizacao();
+
+            if(localizacao.getCep().equals(cepParametro)){
+                denunciasProximas.add(d);
+            }
+        }
+        return denunciasProximas;
     }
 }

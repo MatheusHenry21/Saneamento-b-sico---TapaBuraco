@@ -15,6 +15,7 @@ public class Main {
         String senha;
         String celular;
         String cpf;
+        String cep;
 
         do {
             System.out.println("\n  ---MENU PRINCIPAL---");
@@ -39,8 +40,9 @@ public class Main {
                     senha = ScannerUtil.senha();
                     celular = ScannerUtil.celular();
                     cpf = ScannerUtil.cpf();
+                    cep = ScannerUtil.cep();
 
-                    managerPessoa.cadastrar(nome, email, senha, celular, cpf);
+                    managerPessoa.cadastrar(nome, email, senha, celular, cpf, cep);
                     break;
                 case 3:
                     email = ScannerUtil.email();

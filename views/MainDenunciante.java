@@ -11,13 +11,15 @@ import utils.DateTimeUtil;
 import utils.Feedbacks;
 import utils.ScannerUtil;
 
+import java.util.ArrayList;
+
 public class MainDenunciante {
 
     private int opcao;
     private Denuncia novaDenuncia;
 
     private String dataAtual;
-    private DenunciaDAO managerDenuncia;
+    private DenunciaDAO denunciaDAO;
     private Localizacao localizacao;
     private String descricao;
     private Anexo anexo;
@@ -33,7 +35,7 @@ public class MainDenunciante {
     private TipoDenunciaDAO tipoDenunciaDAO;
     private LocalizacaoDAO localizacaoDAO;
 
-    public void main(Pessoa usuario){
+    public void main(Denunciante denunciante){
         do{
             System.out.println("\n  ---MENU DENUNCIANTE---");
             System.out.println("1 - Registrar denúncia");
@@ -67,6 +69,7 @@ public class MainDenunciante {
                     AlterarDenuncia.main();
                     break;
                 case 3:
+                    ArrayList<Denuncia> denunciaArrayList = denunciaDAO.denunciasProximas(denunciante);
                     break;
                 case 4:
                     Feedbacks.saindoConta();

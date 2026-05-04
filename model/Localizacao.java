@@ -34,4 +34,8 @@ public class Localizacao {
     public void setReferencia(String referencia) {
         this.referencia = referencia;
     }
+
+    public String getCep() {
+        return cep;
+    }
 }

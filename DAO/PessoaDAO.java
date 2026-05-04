@@ -21,8 +21,8 @@ public class PessoaDAO {
         usuarios.add(adm);
     }
 
-    public void cadastrar(String nome, String email, String senha, String celular, String cpf){
-        this.novoUsuario = new Denunciante(nome, email, senha, celular, cpf);
+    public void cadastrar(String nome, String email, String senha, String celular, String cpf, String cep){
+        this.novoUsuario = new Denunciante(nome, email, senha, celular, cpf, cep);
         usuarios.add(novoUsuario);
         Feedbacks.cadastroSucesso();
     }
@@ -66,7 +66,7 @@ public class PessoaDAO {
         }
 
         if(!p.getAcesso()){
-            mainDenunciante.main(p);
+            mainDenunciante.main((Denunciante) p);
         }
     }
 }
