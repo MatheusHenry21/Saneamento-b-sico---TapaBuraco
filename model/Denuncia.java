@@ -25,15 +25,11 @@ public class Denuncia {
         this.statusDenuncia = statusDenuncia;
     }
 
-    public void registrar(String dados){
-        return;
+    public int getId() {
+        return id;
     }
 
-    public void atualizarInformacoes(String dados){
-        return;
-    }
-
-    public void alterarStatus(StatusDenuncia statusDenuncia){
-        return;
+    public Localizacao getLocalizacao() {
+        return localizacao;
     }
 }

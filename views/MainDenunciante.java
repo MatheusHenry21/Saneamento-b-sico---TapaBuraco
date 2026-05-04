@@ -69,8 +69,10 @@ public class MainDenunciante {
                     break;
                 case 4:
                     Feedbacks.saindoConta();
+                    break;
                 default:
                     Feedbacks.opcaoInvalida();
+                    break;
             }
 
         }while (opcao != 4);

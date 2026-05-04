@@ -30,4 +30,8 @@ public class Feedbacks {
     public static void voltando(){
         System.out.println("\nVoltando...");
     }
+
+    public static void idNaoEncontrado(){
+        System.out.println("\nID não encontrado.");
+    }
 }

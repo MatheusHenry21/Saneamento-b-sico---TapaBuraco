@@ -5,6 +5,13 @@ import java.util.Scanner;
 public class ScannerUtil {
     private static Scanner sc = new Scanner(System.in);
 
+    public static int id(){
+        System.out.print("\nDigite o ID de protocólo: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        return opcao();
+    }
+
     public static int opcao(){
         System.out.print("Digite a opção: ");
         int opcao = sc.nextInt();
