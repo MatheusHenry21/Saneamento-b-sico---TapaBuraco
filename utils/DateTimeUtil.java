@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateTimeUtil {
-    public static final String DATE_FORMAT = "dd/MM/yyyy";
     public static final String DATE_TIME_FORMAT = "dd/MM/yyyy HH:mm";
 
     public static String formatarData(String pattern){

@@ -31,8 +31,6 @@ public class MainDenunciante {
     private String cep;
     private String referncia;
 
-    private AnexoDAO anexoDAO;
-    private TipoDenunciaDAO tipoDenunciaDAO;
     private LocalizacaoDAO localizacaoDAO;
 
     public void main(Denunciante denunciante){

@@ -2,10 +2,6 @@ package model;
 
 import enums.TipoMidia;
 import utils.DateTimeUtil;
-import utils.Feedbacks;
-import utils.ScannerUtil;
-
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 

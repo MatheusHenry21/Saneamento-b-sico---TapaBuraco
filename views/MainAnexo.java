@@ -1,8 +1,6 @@
 package views;
 
 import enums.TipoMidia;
-import model.Anexo;
-import utils.DateTimeUtil;
 import utils.Feedbacks;
 import utils.ScannerUtil;
 

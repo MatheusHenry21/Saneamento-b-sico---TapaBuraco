@@ -5,7 +5,6 @@ import DAO.DenunciaDAO;
 import DAO.LocalizacaoDAO;
 import DAO.TipoDenunciaDAO;
 import model.Denuncia;
-import model.Localizacao;
 import utils.Feedbacks;
 import utils.ScannerUtil;
 
