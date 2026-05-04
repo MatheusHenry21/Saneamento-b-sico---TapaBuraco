@@ -32,4 +32,8 @@ public class Denuncia {
     public Localizacao getLocalizacao() {
         return localizacao;
     }
+
+    public void setTipoDenuncia(TipoDenuncia tipoDenuncia) {
+        this.tipoDenuncia = tipoDenuncia;
+    }
 }

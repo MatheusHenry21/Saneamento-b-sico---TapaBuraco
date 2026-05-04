@@ -2,6 +2,7 @@ package views;
 
 import DAO.DenunciaDAO;
 import DAO.LocalizacaoDAO;
+import DAO.TipoDenunciaDAO;
 import model.Denuncia;
 import model.Localizacao;
 import utils.Feedbacks;
@@ -17,6 +18,7 @@ public class AlterarDenuncia {
     private static String cep;
     private static String referncia;
     private static Localizacao localizacao;
+    private static Denuncia denuncia;
 
     private static LocalizacaoDAO localizacaoDAO;
 
@@ -35,7 +37,7 @@ public class AlterarDenuncia {
                 case 1:
                     id = ScannerUtil.id();
 
-                    Denuncia denuncia = DenunciaDAO.buscarPorId(id);
+                    denuncia = DenunciaDAO.buscarPorId(id);
                     if(denuncia == null){
                         Feedbacks.idNaoEncontrado();
                         continue;
@@ -46,11 +48,20 @@ public class AlterarDenuncia {
                     numero = ScannerUtil.numero();
                     cep = ScannerUtil.cep();
                     referncia = ScannerUtil.referencia();
-                    localizacaoDAO.editar(denuncia, bairro, rua, numero, cep, referncia);
 
+                    localizacaoDAO.editar(denuncia, bairro, rua, numero, cep, referncia);
                     Feedbacks.alteracaoSucesso();
                     break;
                 case 2:
+                    id = ScannerUtil.id();
+                    denuncia = DenunciaDAO.buscarPorId(id);
+                    if(denuncia == null){
+                        Feedbacks.idNaoEncontrado();
+                        continue;
+                    }
+
+                    TipoDenunciaDAO.editar(denuncia);
+                    Feedbacks.alteracaoSucesso();
                     break;
                 case 3:
                     break;
