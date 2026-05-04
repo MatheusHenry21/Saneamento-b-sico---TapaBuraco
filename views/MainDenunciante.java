@@ -1,6 +1,7 @@
 package views;
 
 import DAO.DenunciaDAO;
+import DAO.LocalizacaoDAO;
 import enums.StatusDenuncia;
 import enums.TipoDenuncia;
 import model.*;
@@ -20,6 +21,13 @@ public class MainDenunciante {
     private Anexo anexo;
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia statusDenuncia;
+    private String bairro;
+    private String rua;
+    private String numero;
+    private String cep;
+    private String referncia;
+
+    private LocalizacaoDAO localizacaoDAO = new LocalizacaoDAO();
 
     public void main(Pessoa usuario){
         do{
@@ -34,11 +42,19 @@ public class MainDenunciante {
             switch (opcao){
                 case 1:
                     dataAtual = DateTimeUtil.formatarData(DateTimeUtil.DATE_TIME_FORMAT);
-                    localizacao = new Localizacao("ex", "ex", "ex", "ex", "ex");
-                    descricao = ScannerUtil.descricao();
-                    anexo = new Anexo();
-                    tipoDenuncia = TipoDenuncia.OUTROS;
                     statusDenuncia = StatusDenuncia.EM_ANALISE;
+
+                    tipoDenuncia = TipoDenuncia.OUTROS;
+
+                    bairro = ScannerUtil.bairro();
+                    rua = ScannerUtil.rua();
+                    numero = ScannerUtil.numero();
+                    cep = ScannerUtil.cep();
+                    referncia = ScannerUtil.referencia();
+                    localizacao = localizacaoDAO.cadastrar(bairro, rua, numero, cep, referncia);
+
+                    anexo = new Anexo();
+                    descricao = ScannerUtil.descricao();
 
                     novaDenuncia = new Denuncia(dataAtual, localizacao, descricao, anexo, tipoDenuncia, statusDenuncia);
                     break;

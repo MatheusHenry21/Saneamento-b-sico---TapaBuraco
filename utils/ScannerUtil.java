@@ -44,13 +44,13 @@ public class ScannerUtil {
     }
 
     public static String celular(){
-        System.out.print("Digite seu celular(ex: 1199999999): ");
+        System.out.print("Digite seu celular(ex: (11)99999-9999): ");
         String celular = sc.nextLine();
         return celular;
     }
 
     public static String cpf(){
-        System.out.print("Digite o cpf (ex: 12345678910): ");
+        System.out.print("Digite o cpf (ex: 123.456.789-10): ");
         String cpf = sc.nextLine();
         return cpf;
     }
@@ -59,5 +59,35 @@ public class ScannerUtil {
         System.out.print("Descreva o problema: ");
         String descricao = sc.nextLine();
         return descricao;
+    }
+
+    public static String bairro(){
+        System.out.print("Digite o bairro: ");
+        String bairro = sc.nextLine();
+        return bairro;
+    }
+
+    public static String rua(){
+        System.out.print("Digite o nome da rua:");
+        String rua = sc.nextLine();
+        return rua;
+    }
+
+    public static String numero(){
+        System.out.print("Digite o número da casa: ");
+        String numero = sc.nextLine();
+        return numero;
+    }
+
+    public static String cep(){
+        System.out.print("Digite o CEP(ex: 56700-000)");
+        String cep = sc.nextLine();
+        return cep;
+    }
+
+    public static String referencia(){
+        System.out.print("Digite um ponto de referência: ");
+        String referencia = sc.nextLine();
+        return referencia;
     }
 }

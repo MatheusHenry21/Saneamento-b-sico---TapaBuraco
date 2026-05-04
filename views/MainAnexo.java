@@ -9,12 +9,10 @@ public class MainAnexo {
     public static void mainAnexo(){
 
         do{
-            System.out.println("\n---TIPOS DA DENUNCIA---");
+            System.out.println("\n---ANEXOS---");
             System.out.println("1 - IMAGEM");
             System.out.println("2 - VÍDEO");
-            System.out.println("3 - AUDIO");
-            System.out.println("4 - DOCUMENTOS");
-            System.out.println("5 - OUTROS\n");
+            System.out.println("3 - AUDIO\n");
 
             opcao = ScannerUtil.multiOpcao();
 
