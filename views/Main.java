@@ -50,7 +50,7 @@ public class Main {
                     managerPessoa.atualizarSenha(email);
                     break;
                 case 4:
-                    System.out.println("\nSaindo... até logo!");
+                    System.out.println("Saindo... até logo!");
                     break;
                 default:
                     Feedbacks.opcaoInvalida();

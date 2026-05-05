@@ -59,6 +59,7 @@ public class MainDenunciante {
                     novaDenuncia = new Denuncia(denunciante ,dataAtual, localizacao, descricao, anexo, tipoDenuncia, statusDenuncia);
                     denunciaDAO.cadastrar(novaDenuncia);
                     Feedbacks.cadastroSucessoDenuncia();
+                    Feedbacks.mostrarIdDenuncia(novaDenuncia);
                     break;
                 case 2:
                     AlterarDenuncia.main();

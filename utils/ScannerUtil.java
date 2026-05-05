@@ -69,7 +69,7 @@ public class ScannerUtil {
     }
 
     public static String bairro(){
-        System.out.print("Digite o bairro: ");
+        System.out.print("Digite o nome do bairro: ");
         String bairro = sc.nextLine();
         return bairro;
     }

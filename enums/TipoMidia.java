@@ -22,7 +22,6 @@ public enum TipoMidia {
             if(tipo.getCodigo() == codigo){
                 return tipo;
             }
-            Feedbacks.opcaoInvalida();
         }
 
         Feedbacks.opcaoInvalida();

@@ -18,7 +18,7 @@ public class MainAnexo {
             System.out.println("\n---TIPOS DE MIDIA(OBS: Pode marcar mais de um)---");
             System.out.println("1 - IMAGEM");
             System.out.println("2 - VÍDEO");
-            System.out.println("3 - DOCUMENTO\n");
+            System.out.println("3 - DOCUMENTO");
 
             opcao = ScannerUtil.multiOpcao();
 
@@ -26,7 +26,7 @@ public class MainAnexo {
                 break;
             }
 
-            if(opcao > 3 || opcao < 1){
+            if(opcao < 1 || opcao > 3 ){
                 Feedbacks.opcaoInvalida();
                 continue;
             }

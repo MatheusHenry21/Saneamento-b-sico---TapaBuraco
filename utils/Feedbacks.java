@@ -17,7 +17,7 @@ public class Feedbacks {
     }
 
     public static void cadastroSucessoDenuncia(){
-        System.out.print("\nDenúncia cadastra com sucesso.");
+        System.out.println("\nDenúncia cadastra com sucesso.");
     }
 
     public static void alteracaoSucesso(){
@@ -40,6 +40,10 @@ public class Feedbacks {
         System.out.println("\nID não encontrado.");
     }
 
+    public static void mostrarIdDenuncia(Denuncia denuncia){
+        System.out.println("Protocólo da denúncia: " + denuncia.getId());
+    }
+
     public static void exibirDenuncia(Denuncia denuncia){
         Localizacao localizacao = denuncia.getLocalizacao();
         Anexo anexo = denuncia.getAnexo();
@@ -53,7 +57,7 @@ public class Feedbacks {
         System.out.print("Localização: ");
         exibirLocalizacao(localizacao);
 
-        System.out.println("Anexos: ");
+        System.out.print("Anexos: ");
         exibirAnexo(anexo);
 
         System.out.println("----------------------");
@@ -64,7 +68,7 @@ public class Feedbacks {
     }
 
     public static void exibirAnexo(Anexo anexo){
-        System.out.println("ID do Anexo: " + anexo.getId());
+        System.out.print("ID do Anexo: " + anexo.getId() + " | ");
         System.out.print("Mídias: ");
         for (TipoMidia t : anexo.getTipoMidias()){
             System.out.print(t + " ");
