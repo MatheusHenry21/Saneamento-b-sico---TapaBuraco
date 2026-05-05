@@ -7,13 +7,13 @@ import model.Localizacao;
 import java.util.ArrayList;
 
 public class DenunciaDAO{
-    private static ArrayList<Denuncia> denuncias;
+    private static ArrayList<Denuncia> denuncias = new ArrayList<>();
 
     public void cadastrar(Denuncia denuncia){
-        this.denuncias.add(denuncia);
+        denuncias.add(denuncia);
     }
 
-    public static Denuncia buscarPorId(int id){
+    public Denuncia buscarPorId(int id){
         for(Denuncia d: denuncias){
             if(d.getId() == id){
                 return d;

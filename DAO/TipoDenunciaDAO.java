@@ -5,16 +5,15 @@ import model.Denuncia;
 import views.MainTipoDenuncia;
 
 public class TipoDenunciaDAO {
-    private static MainTipoDenuncia mainTipoDenunciante;
-    private static TipoDenuncia tipoDenuncia;
-    private static Denuncia denuncia;
 
-    public static TipoDenuncia escolher(){
-        return mainTipoDenunciante.main();
+    public TipoDenuncia escolher(){
+        MainTipoDenuncia mainTipoDenunciante = new MainTipoDenuncia();
+        return mainTipoDenunciante.inicia();
     }
 
-    public static void editar(Denuncia denuncia){
-        tipoDenuncia = mainTipoDenunciante.main();
-        denuncia.setTipoDenuncia(tipoDenuncia);
+    public void editar(Denuncia denuncia){
+        MainTipoDenuncia mainTipoDenunciante = new MainTipoDenuncia();
+        TipoDenuncia tipo = mainTipoDenunciante.inicia();
+        denuncia.setTipoDenuncia(tipo);
     }
 }

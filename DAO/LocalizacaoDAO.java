@@ -4,6 +4,8 @@ import model.Denuncia;
 import model.Localizacao;
 import model.Pessoa;
 
+import javax.print.DocFlavor;
+
 public class LocalizacaoDAO {
     Localizacao localizacao;
 

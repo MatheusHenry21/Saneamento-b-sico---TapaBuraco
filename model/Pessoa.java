@@ -1,6 +1,7 @@
 package model;
 
 public abstract class Pessoa {
+    private static int num;
     private int id;
     private String nome;
     private String email;
@@ -8,6 +9,7 @@ public abstract class Pessoa {
     private Boolean acesso;
 
     public Pessoa(String nome, String email, String senha){
+        this.id = ++ num;
         this.nome = nome;
         this.email = email;
         this.senha = senha;

@@ -10,6 +10,7 @@ import utils.ScannerUtil;
 
 public class AlterarDenuncia {
     private static int id;
+    private static DenunciaDAO denunciaDAO;
 
     private static int opcao;
     private static String bairro;
@@ -20,6 +21,8 @@ public class AlterarDenuncia {
     private static Denuncia denuncia;
 
     private static LocalizacaoDAO localizacaoDAO;
+    private static TipoDenunciaDAO tipoDenunciaDAO;
+    private static AnexoDAO anexoDAO;
 
     public static void main(){
         do{
@@ -36,7 +39,7 @@ public class AlterarDenuncia {
                 case 1:
                     id = ScannerUtil.id();
 
-                    denuncia = DenunciaDAO.buscarPorId(id);
+                    denuncia = denunciaDAO.buscarPorId(id);
                     if(denuncia == null){
                         Feedbacks.idNaoEncontrado();
                         continue;
@@ -53,29 +56,29 @@ public class AlterarDenuncia {
                     break;
                 case 2:
                     id = ScannerUtil.id();
-                    denuncia = DenunciaDAO.buscarPorId(id);
+                    denuncia = denunciaDAO.buscarPorId(id);
                     if(denuncia == null){
                         Feedbacks.idNaoEncontrado();
                         continue;
                     }
 
-                    TipoDenunciaDAO.editar(denuncia);
+                    tipoDenunciaDAO.editar(denuncia);
                     Feedbacks.alteracaoSucesso();
                     break;
                 case 3:
                     id = ScannerUtil.id();
-                    denuncia = DenunciaDAO.buscarPorId(id);
+                    denuncia = denunciaDAO.buscarPorId(id);
                     if(denuncia == null){
                         Feedbacks.idNaoEncontrado();
                         continue;
                     }
 
-                    AnexoDAO.editar(denuncia);
+                    anexoDAO.editar(denuncia);
                     Feedbacks.alteracaoSucesso();
                     break;
                 case 4:
                     id = ScannerUtil.id();
-                    denuncia = DenunciaDAO.buscarPorId(id);
+                    denuncia = denunciaDAO.buscarPorId(id);
                     if(denuncia == null){
                         Feedbacks.idNaoEncontrado();
                         continue;

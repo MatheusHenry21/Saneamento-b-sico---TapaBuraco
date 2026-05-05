@@ -11,12 +11,10 @@ import views.MainDenunciante;
 import java.util.ArrayList;
 
 public class PessoaDAO {
-    private ArrayList<Pessoa> usuarios;
+    private static ArrayList<Pessoa> usuarios = new ArrayList<>();
     private Pessoa novoUsuario;
 
     public PessoaDAO(){
-        usuarios = new ArrayList<>();
-
         Pessoa adm = new Administrador("ADM", "admin123@gmail.com", "admin123");
         usuarios.add(adm);
     }
@@ -66,7 +64,7 @@ public class PessoaDAO {
         }
 
         if(!p.getAcesso()){
-            mainDenunciante.main((Denunciante) p);
+            mainDenunciante.inicia((Denunciante) p);
         }
     }
 }

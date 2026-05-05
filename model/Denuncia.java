@@ -3,9 +3,8 @@ package model;
 import enums.StatusDenuncia;
 import enums.TipoDenuncia;
 
-import java.util.Date;
-
 public class Denuncia {
+    private static int num;
     private int id;
     private Denunciante denunciante;
     private String dataCriacao;
@@ -16,10 +15,13 @@ public class Denuncia {
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia statusDenuncia;
 
-    public Denuncia(String dataCriacao, Localizacao localizacao, String descricao, Anexo anexo, TipoDenuncia tipoDenuncia, StatusDenuncia statusDenuncia){
+    public Denuncia(Denunciante denunciante, String dataCriacao, Localizacao localizacao, String descricao, Anexo anexo, TipoDenuncia tipoDenuncia, StatusDenuncia statusDenuncia){
+        this.id = ++ num;
+        this.denunciante = denunciante;
         this.dataCriacao = dataCriacao;
-        this.localizacao = localizacao;
+        this.dataAtualizacao = dataCriacao;
         this.descricao = descricao;
+        this.localizacao = localizacao;
         this.anexo = anexo;
         this.tipoDenuncia = tipoDenuncia;
         this.statusDenuncia = statusDenuncia;
@@ -35,6 +37,22 @@ public class Denuncia {
 
     public Anexo getAnexo() {
         return anexo;
+    }
+
+    public String getData() {
+        return dataAtualizacao;
+    }
+
+    public TipoDenuncia getTipoDenuncia() {
+        return tipoDenuncia;
+    }
+
+    public StatusDenuncia getStatusDenuncia() {
+        return statusDenuncia;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 
     public void setTipoDenuncia(TipoDenuncia tipoDenuncia) {

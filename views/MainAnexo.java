@@ -5,13 +5,15 @@ import utils.Feedbacks;
 import utils.ScannerUtil;
 
 import java.util.Set;
+import java.util.HashSet;
 
 public class MainAnexo {
     private int opcao;
-    private Set<TipoMidia> tipoMidias;
     private TipoMidia tipoMidia;
 
     public Set<TipoMidia> main(){
+        Set<TipoMidia> tipoMidias = new HashSet<>();
+
         do {
             System.out.println("\n---TIPOS DE MIDIA(OBS: Pode marcar mais de um)---");
             System.out.println("1 - IMAGEM");
@@ -20,7 +22,11 @@ public class MainAnexo {
 
             opcao = ScannerUtil.multiOpcao();
 
-            if(opcao > 3 | opcao < 1){
+            if(opcao == 0){
+                break;
+            }
+
+            if(opcao > 3 || opcao < 1){
                 Feedbacks.opcaoInvalida();
                 continue;
             }
@@ -28,7 +34,7 @@ public class MainAnexo {
             tipoMidia = TipoMidia.escolherTipo(opcao);
             tipoMidias.add(tipoMidia);
 
-        }while (opcao != 0);
-        return null;
+        }while (true);
+        return tipoMidias;
     }
 }

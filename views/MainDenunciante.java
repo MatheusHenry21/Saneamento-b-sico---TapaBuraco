@@ -19,21 +19,17 @@ public class MainDenunciante {
     private Denuncia novaDenuncia;
 
     private String dataAtual;
-    private DenunciaDAO denunciaDAO;
     private Localizacao localizacao;
-    private String descricao;
     private Anexo anexo;
     private TipoDenuncia tipoDenuncia;
     private StatusDenuncia statusDenuncia;
-    private String bairro;
-    private String rua;
-    private String numero;
-    private String cep;
-    private String referncia;
 
-    private LocalizacaoDAO localizacaoDAO;
+    private LocalizacaoDAO localizacaoDAO = new LocalizacaoDAO();
+    private DenunciaDAO denunciaDAO = new DenunciaDAO();
+    private TipoDenunciaDAO tipoDenunciaDAO = new TipoDenunciaDAO();
+    private AnexoDAO anexoDAO = new AnexoDAO();
 
-    public void main(Denunciante denunciante){
+    public void inicia(Denunciante denunciante){
         do{
             System.out.println("\n  ---MENU DENUNCIANTE---");
             System.out.println("1 - Registrar denúncia");
@@ -48,19 +44,20 @@ public class MainDenunciante {
                     dataAtual = DateTimeUtil.formatarData(DateTimeUtil.DATE_TIME_FORMAT);
                     statusDenuncia = StatusDenuncia.EM_ANALISE;
 
-                    tipoDenuncia = TipoDenunciaDAO.escolher();
+                    tipoDenuncia = tipoDenunciaDAO.escolher();
 
-                    bairro = ScannerUtil.bairro();
-                    rua = ScannerUtil.rua();
-                    numero = ScannerUtil.numero();
-                    cep = ScannerUtil.cep();
-                    referncia = ScannerUtil.referencia();
-                    localizacao = localizacaoDAO.cadastrar(bairro, rua, numero, cep, referncia);
+                    String bairro = ScannerUtil.bairro();
+                    String rua = ScannerUtil.rua();
+                    String numero = ScannerUtil.numero();
+                    String cep = ScannerUtil.cep();
+                    String referencia = ScannerUtil.referencia();
+                    localizacao = localizacaoDAO.cadastrar(bairro, rua, numero, cep, referencia);
 
-                    anexo = AnexoDAO.escolher();
-                    descricao = ScannerUtil.descricao();
+                    anexo = anexoDAO.escolher();
+                    String descricao = ScannerUtil.descricao();
 
-                    novaDenuncia = new Denuncia(dataAtual, localizacao, descricao, anexo, tipoDenuncia, statusDenuncia);
+                    novaDenuncia = new Denuncia(denunciante ,dataAtual, localizacao, descricao, anexo, tipoDenuncia, statusDenuncia);
+                    denunciaDAO.cadastrar(novaDenuncia);
                     Feedbacks.cadastroSucessoDenuncia();
                     break;
                 case 2:
@@ -68,6 +65,14 @@ public class MainDenunciante {
                     break;
                 case 3:
                     ArrayList<Denuncia> denunciaArrayList = denunciaDAO.denunciasProximas(denunciante);
+
+                    if (denunciaArrayList.isEmpty()) {
+                        System.out.println("Nenhuma denúncia próxima encontrada.");
+                    } else {
+                        for (Denuncia d : denunciaArrayList) {
+                            Feedbacks.exibirDenuncia(d);
+                        }
+                    }
                     break;
                 case 4:
                     Feedbacks.saindoConta();

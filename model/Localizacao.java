@@ -1,6 +1,8 @@
 package model;
 
 public class Localizacao {
+    private static int num;
+    private int id;
     private String bairro;
     private String rua;
     private String numero;
@@ -8,6 +10,7 @@ public class Localizacao {
     private String referencia;
 
     public Localizacao(String bairro, String rua, String numero, String cep, String referencia){
+        this.id = ++num;
         this.bairro = bairro;
         this.rua = rua;
         this.numero = numero;
@@ -37,5 +40,21 @@ public class Localizacao {
 
     public String getCep() {
         return cep;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
+    public String getRua() {
+        return rua;
     }
 }

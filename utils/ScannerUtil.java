@@ -20,7 +20,7 @@ public class ScannerUtil {
     }
 
     public static int multiOpcao(){
-        System.out.print("Digite a opção(0 para sair): ");
+        System.out.print("\nDigite a opção(0 para sair): ");
         int opcao = sc.nextInt();
         sc.nextLine();
         return opcao;
@@ -75,7 +75,7 @@ public class ScannerUtil {
     }
 
     public static String rua(){
-        System.out.print("Digite o nome da rua:");
+        System.out.print("Digite o nome da rua: ");
         String rua = sc.nextLine();
         return rua;
     }
@@ -87,7 +87,7 @@ public class ScannerUtil {
     }
 
     public static String cep(){
-        System.out.print("Digite o CEP(ex: 56700-000)");
+        System.out.print("Digite o CEP(ex: 56700-000): ");
         String cep = sc.nextLine();
         return cep;
     }

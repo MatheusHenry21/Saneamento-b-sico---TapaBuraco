@@ -8,7 +8,7 @@ public class MainTipoDenuncia {
     private int opcao;
     private TipoDenuncia tipoDenuncia;
 
-    public TipoDenuncia main(){
+    public TipoDenuncia inicia(){
 
         do{
             System.out.println("\n---TIPO DA DENUNCIA---");
